@@ -1,7 +1,7 @@
 # Encoding: UTF-8
 #
 # Cookbook Name:: iwork
-# Recipe:: default
+# Library:: pages_app
 #
 # Copyright 2015 Jonathan Hartman
 #
@@ -18,8 +18,23 @@
 # limitations under the License.
 #
 
-include_recipe 'mac-app-store'
+class Chef
+  class Resource
+    # A Chef resource for the Pages app.
+    #
+    # @author Jonathan Hartman <j@p4nt5.com>
+    class PagesApp < MacAppStoreApp
+      self.resource_name = :pages_app
 
-pages_app 'default' do
-  action :install
+      #
+      # Overload the app name with the one for this app.
+      #
+      attribute :app_name, kind_of: String, default: 'Pages'
+
+      #
+      # Overload the bundle ID with the one for this app.
+      #
+      attribute :bundle_id, kind_of: String, default: 'com.apple.pkg.Pages5'
+    end
+  end
 end
