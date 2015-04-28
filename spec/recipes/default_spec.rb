@@ -14,7 +14,15 @@ describe 'iwork::default' do
       expect(chef_run).to include_recipe('mac-app-store')
     end
 
-    it 'installs the Pages app' do
+    it 'installs Keynote' do
+      expect(chef_run).to install_keynote_app('default')
+    end
+
+    it 'installs Numbers' do
+      expect(chef_run).to install_numbers_app('default')
+    end
+
+    it 'installs Pages' do
       expect(chef_run).to install_pages_app('default')
     end
   end

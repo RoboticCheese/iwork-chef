@@ -21,6 +21,8 @@
 require 'chef/dsl'
 require 'chef/platform/provider_mapping'
 
-Chef::Platform.set(platform: :mac_os_x,
-                   resource: :pages_app,
-                   provider: Chef::Provider::MacAppStoreApp)
+[:keynote_app, :numbers_app, :pages_app].each do |r|
+  Chef::Platform.set(platform: :mac_os_x,
+                     resource: r,
+                     provider: Chef::Provider::MacAppStoreApp)
+end

@@ -20,6 +20,14 @@
 
 include_recipe 'mac-app-store'
 
+keynote_app 'default' do
+  action :install
+end
+
+numbers_app 'default' do
+  action :install
+end
+
 pages_app 'default' do
   action :install
 end

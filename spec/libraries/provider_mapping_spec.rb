@@ -5,6 +5,12 @@ require_relative '../../libraries/provider_mapping'
 
 describe :provider_mapping do
   let(:platform) { nil }
+  let(:keynote_provider) do
+    Chef::Platform.platforms[platform][:default][:keynote_app]
+  end
+  let(:numbers_provider) do
+    Chef::Platform.platforms[platform][:default][:numbers_app]
+  end
   let(:pages_provider) do
     Chef::Platform.platforms[platform][:default][:pages_app]
   end
@@ -12,16 +18,20 @@ describe :provider_mapping do
   context 'Mac OS X' do
     let(:platform) { :mac_os_x }
 
-    it 'uses the MacAppStoreApp app provider' do
-      expect(pages_provider).to eq(Chef::Provider::MacAppStoreApp)
+    %w(keynote numbers pages).each do |a|
+      it "uses the MacAppStoreApp provider for #{a}" do
+        expect(send(:"#{a}_provider")).to eq(Chef::Provider::MacAppStoreApp)
+      end
     end
   end
 
   context 'Ubuntu' do
     let(:platform) { :ubuntu }
 
-    it 'returns no app provider' do
-      expect(pages_provider).to eq(nil)
+    %w(keynote numbers pages).each do |a|
+      it "returns no #{a} provider" do
+        expect(send(:"#{a}_provider")).to eq(nil)
+      end
     end
   end
 end

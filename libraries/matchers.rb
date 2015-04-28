@@ -19,9 +19,11 @@
 #
 
 if defined?(ChefSpec)
-  ChefSpec.define_matcher(:pages_app)
+  [:keynote_app, :numbers_app, :pages_app].each do |r|
+    ChefSpec.define_matcher(r)
 
-  def install_pages_app(name)
-    ChefSpec::Matchers::ResourceMatcher.new(:pages_app, :install, name)
+    define_method(:"install_#{r}") do |name|
+      ChefSpec::Matchers::ResourceMatcher.new(r, :install, name)
+    end
   end
 end

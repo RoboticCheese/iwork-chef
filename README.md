@@ -35,6 +35,50 @@ Opens the Mac App Store and performs a simple install of all the apps.
 Resources
 =========
 
+***keynote_app***
+
+Used to perform installation of the Keynote app.
+
+Syntax:
+
+    keynote_app 'default' do
+        action :install
+    end
+
+Actions:
+
+| Action     | Description     |
+|------------|-----------------|
+| `:install` | Install the app |
+
+Attributes:
+
+| Attribute  | Default        | Description          |
+|------------|----------------|----------------------|
+| action     | `:install`     | Action(s) to perform |
+
+***numbers_app***
+
+Used to perform installation of the Numbers app.
+
+Syntax:
+
+    numbers_app 'default' do
+        action :install
+    end
+
+Actions:
+
+| Action     | Description     |
+|------------|-----------------|
+| `:install` | Install the app |
+
+Attributes:
+
+| Attribute  | Default        | Description          |
+|------------|----------------|----------------------|
+| action     | `:install`     | Action(s) to perform |
+
 ***pages_app***
 
 Used to perform installation of the Pages app.
