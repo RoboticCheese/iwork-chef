@@ -6,13 +6,19 @@ require_relative '../../libraries/provider_mapping'
 describe :provider_mapping do
   let(:platform) { nil }
   let(:keynote_provider) do
-    Chef::Platform.platforms[platform][:default][:keynote_app]
+    Chef::Platform.platforms[platform] && \
+      Chef::Platform.platforms[platform][:default] && \
+      Chef::Platform.platforms[platform][:default][:keynote_app]
   end
   let(:numbers_provider) do
-    Chef::Platform.platforms[platform][:default][:numbers_app]
+    Chef::Platform.platforms[platform] && \
+      Chef::Platform.platforms[platform][:default] && \
+      Chef::Platform.platforms[platform][:default][:numbers_app]
   end
   let(:pages_provider) do
-    Chef::Platform.platforms[platform][:default][:pages_app]
+    Chef::Platform.platforms[platform] && \
+      Chef::Platform.platforms[platform][:default] && \
+      Chef::Platform.platforms[platform][:default][:pages_app]
   end
 
   context 'Mac OS X' do
