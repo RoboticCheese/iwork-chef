@@ -1,15 +1,16 @@
 # Encoding: UTF-8
-#
-# rubocop:disable SingleSpaceBeforeFirstArg
-name             'iwork'
-maintainer       'Jonathan Hartman'
+
+name 'iwork'
+maintainer 'Jonathan Hartman'
 maintainer_email 'j@p4nt5.com'
-license          'apache2'
-description      'Installs iWork apps'
+license 'apache2'
+description 'Installs iWork apps'
 long_description 'Installs iWork apps'
-version          '0.1.1'
+version '0.1.1'
 
-depends          'mac-app-store', '~> 1.0'
+source_url 'https://github.com/roboticcheese/iwork-chef'
+issues_url 'https://github.com/roboticcheese/iwork-chef/issues'
 
-supports         'mac_os_x'
-# rubocop:enable SingleSpaceBeforeFirstArg
+depends 'mac-app-store', '~> 1.0'
+
+supports 'mac_os_x'

@@ -9,8 +9,7 @@ describe Chef::Resource::NumbersApp do
 
   describe '#initialize' do
     it 'sets the correct resource name' do
-      exp = :numbers_app
-      expect(resource.instance_variable_get(:@resource_name)).to eq(exp)
+      expect(resource.resource_name).to eq(:numbers_app)
     end
   end
 

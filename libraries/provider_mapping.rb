@@ -20,6 +20,9 @@
 
 require 'chef/dsl'
 require 'chef/platform/provider_mapping'
+require_relative 'resource_keynote_app'
+require_relative 'resource_numbers_app'
+require_relative 'resource_pages_app'
 
 [:keynote_app, :numbers_app, :pages_app].each do |r|
   Chef::Platform.set(platform: :mac_os_x,
