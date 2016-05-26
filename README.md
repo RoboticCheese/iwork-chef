@@ -30,7 +30,7 @@ Recipes
 
 ***default***
 
-Opens the Mac App Store and performs a simple install of all the apps.
+Install all of the apps.
 
 Resources
 =========
@@ -50,6 +50,7 @@ Actions:
 | Action     | Description     |
 |------------|-----------------|
 | `:install` | Install the app |
+| `:upgrade` | Upgrade the app |
 
 Attributes:
 
@@ -72,6 +73,7 @@ Actions:
 | Action     | Description     |
 |------------|-----------------|
 | `:install` | Install the app |
+| `:upgrade` | Upgrade the app |
 
 Attributes:
 
@@ -94,6 +96,7 @@ Actions:
 | Action     | Description     |
 |------------|-----------------|
 | `:install` | Install the app |
+| `:upgrade` | Upgrade the app |
 
 Attributes:
 
@@ -115,7 +118,7 @@ License & Authors
 =================
 - Author: Jonathan Hartman <j@p4nt5.com>
 
-Copyright 2015 Jonathan Hartman
+Copyright 2015-2016, Jonathan Hartman
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
