@@ -1,6 +1,9 @@
 Iwork Cookbook CHANGELOG
 ========================
 
+Unreleased
+----------
+
 v1.0.0 (2016-05-26)
 -------------------
 - Update to use mac-app-store cookbook 2.0
